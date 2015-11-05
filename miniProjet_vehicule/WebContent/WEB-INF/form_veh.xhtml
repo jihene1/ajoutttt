@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p ="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>الوسائل المشتركة</title>
+</h:head>
+<h:body>
+<f:view>
+<h:form>
+<h:panelGrid columns="4" cellpadding="10">
+  <p:outputLabel value="عدد السيارات المشتركة" ></p:outputLabel><p:inputText title="seléctionner le nombre de voiture" value="#{vehiculeDAO.v.nb_vehicule}" />
+  <p:outputLabel value="نوع الوسيلة"></p:outputLabel>
+  <p:selectOneMenu value="#{vehiculeDAO.v.genre_vehicule}">
+         <f:selectItem itemLabel="دراجة عادية" itemValue="دراجة عادية"></f:selectItem>
+         <f:selectItem itemLabel="دراجة نارية" itemValue="دراجة نارية"></f:selectItem>
+         <f:selectItem itemLabel="سيارة خفيفة" itemValue="سيارة خفيفة"></f:selectItem>
+         <f:selectItem itemLabel="شاحنة خفيفة" itemValue="شاحنة خفيفة"></f:selectItem>
+         <f:selectItem itemLabel="شاحنة ثقيلة" itemValue="شاحنة ثقيلة"></f:selectItem>
+         <f:selectItem itemLabel="اجرة تاكسي" itemValue="اجرة تاكسي"></f:selectItem>
+         <f:selectItem itemLabel="حافلة" itemValue="حافلة"></f:selectItem>
+         <f:selectItem itemLabel="مترو خفيف" itemValue="مترو خفيف"></f:selectItem>
+         <f:selectItem itemLabel="قطار" itemValue="قطار"></f:selectItem>
+         <f:selectItem itemLabel="جرار" itemValue="جرار"></f:selectItem>
+         <f:selectItem itemLabel="معدات فلاحية" itemValue="معدات فلاحية"></f:selectItem>
+         <f:selectItem itemLabel="عربة مجرورة" itemValue="عربة مجرورةt"></f:selectItem>
+         <f:selectItem itemLabel="عربة مدفوعة" itemValue="عربة مدفوعة"></f:selectItem>
+         <f:selectItem itemLabel="الة اشغال" itemValue="الة اشغال"></f:selectItem>
+         <f:selectItem itemLabel="راكب دابة" itemValue="راكب دابة"></f:selectItem>
+         <f:selectItem itemLabel="اجرة لواج" itemValue="اجرة لواج"></f:selectItem>
+          <f:selectItem itemLabel="نقل ريفي" itemValue="نقل ريفي"></f:selectItem>
+         <f:selectItem itemLabel="مختلفة" itemValue="مختلفة"></f:selectItem>
+       </p:selectOneMenu>
+         <p:outputLabel value="الجنسية"></p:outputLabel>
+  <p:selectOneMenu value="#{vehiculeDAO.v.nationnalite}">
+         <f:selectItem itemLabel="تونسية" itemValue="تونسية"></f:selectItem>
+         <f:selectItem itemLabel="اجنبية" itemValue="اجنبية"></f:selectItem>
+  </p:selectOneMenu>
+  <p:outputLabel value="الملكية"></p:outputLabel>
+  <p:selectOneMenu value="#{vehiculeDAO.v.prop_vehicule}">
+         <f:selectItem itemLabel="خاصة" itemValue="خاصة"></f:selectItem>
+         <f:selectItem itemLabel="ادارية" itemValue="ادارية"></f:selectItem>
+         <f:selectItem itemLabel="اجنبية" itemValue="اجنبية"></f:selectItem>
+         <f:selectItem itemLabel="مؤسسة خاصة" itemValue="مؤسسة خاصة"></f:selectItem>
+         <f:selectItem itemLabel="كراء" itemValue="كراء"></f:selectItem>
+  </p:selectOneMenu>
+  <p:outputLabel value="خلل فني"></p:outputLabel>
+  <p:selectOneMenu value="#{vehiculeDAO.v.prob_vehicule}">
+         <f:selectItem itemLabel="القيادة" itemValue="القيادة"></f:selectItem>
+         <f:selectItem itemLabel="الفرامل" itemValue="الفرامل"></f:selectItem>
+         <f:selectItem itemLabel="العجلات" itemValue="العجلات"></f:selectItem>
+         <f:selectItem itemLabel="الاضاءة" itemValue="الاضاءة"></f:selectItem>
+         <f:selectItem itemLabel="اخرى" itemValue="اخرى"></f:selectItem>
+  </p:selectOneMenu><p:outputLabel value="الفحص الفني"></p:outputLabel>
+<p:selectOneRadio>
+<f:selectItem itemLabel="نعم" itemValue="نعم"></f:selectItem>
+ <f:selectItem itemLabel="لا" itemValue="لا"></f:selectItem>
+</p:selectOneRadio>
+ <p:commandButton value="التالي" action="#{vehiculeDAO.insert}"></p:commandButton>
+</h:panelGrid>
+</h:form>
+</f:view>
+</h:body>
+</html>
